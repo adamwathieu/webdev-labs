@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8"><title>Top Restaurant</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Restaurant</title>
+</head>
+<body>
+    {% include 'includes/header.html' %}
+
+    <main>
+        <section>
+            <h2>{{ restaurant.get('name') }}</h2>
+            <!-- <iframe src="https://open.spotify.com/embed/track/5ruzrDWcT0vuJIOMW7gMnW" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> -->
+            <img src={{ restaurant.get('image_url') }} alt={{ restaurant.get('name') }} />
+            <p>{{ restaurant.get('display_address') }}</p>
+            <p>Rating from <b> {{ restaurant.get('review_count')}} </b> reviewers: <b>{{ restaurant.get('rating')}}</b></p>
+            <!-- <p>Number of Reviews: {{ restaurant.get('rating')}}</p> -->
+            <p>Price: <b>{{ restaurant.get('price')}}</b></p>
+            <!-- <p>Data: {{ restaurant }}</p> -->
+            <!-- <button>Button</button> -->
+        </section>
+        <!-- <p>Search location: {{city}}</p>
+        <p>Search term: {{search_term or 'None Specified'}}</p>
+        <p>Data: {{ restaurant }}</p>
+        <h2>Top Restaurant:</h2> 
+        <p>Name: {{ restaurant.get('name') }}</p> -->
+    </main>
+</body>
+</html>
+
